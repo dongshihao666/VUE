@@ -1,0 +1,108 @@
+*{
+    font-size: .14rem;
+    box-sizing: border-box;
+}
+html,body{
+    width: 100%;
+    height: 100%;
+}
+body{
+    display: flex;
+    flex-direction:column;
+}
+header{
+    width: 100%;
+    height: .4rem;
+    background: #3ea3fd;
+    position: relative;
+    img{
+        position: absolute;
+        top: 5px;
+        left: 5px;
+        width: .3rem;
+        height: .3rem;
+    }
+    p{
+        text-align: center;
+        line-height: .4rem;
+        color: #fff;
+    }
+    a{
+        position: absolute;
+        top: 12px;
+        right: 10px;
+        font-size: .12rem;
+        color: #f3f3f3;
+    }
+}
+section{
+    width: 100%;
+    flex:1;
+    overflow: auto;
+    input{
+        width: 94%;
+        height: .2rem;
+        border:none;
+        background: #f3f3f3;
+        margin-top:3px;
+        margin-left: 3%; 
+        font-size: .12rem;
+        text-align: center;
+        color: #9b9b9b;
+    }
+    .main{
+        width: 100%;
+        height: .57rem;
+        dl{
+            width: 100%;
+            display: flex;
+            height: .57rem;
+            border-bottom:1px solid #f2f3f3;
+            dt{
+                padding: 7px 7px;
+                flex:1;
+                img{
+                    width: .43rem;
+                }
+            }
+            dd{
+                flex:6;
+                h3{
+                    padding-top:7px; 
+                }
+                p{
+                    padding-top:5px;
+                    text-overflow:ellipsis;overflow:hidden;white-space:nowrap;width:2.5rem;
+                }
+                span{
+                    padding-top:.05rem;
+                    display: inline-block; 
+                    color: #eabc9b;
+                }
+            }
+        }
+    }
+}
+footer{
+    width: 100%;
+    height: .4rem;
+    border-top: 1px solid #f2f2f2;
+    ul{
+        width: 100%;
+        display: flex;
+        li{
+            flex:1;
+            text-align: center;
+            padding-top:.2rem;
+            position: relative; 
+            a{
+                i{
+                    position: absolute;
+                    top: 4px;
+                    left: 50%;
+                    margin-left: -7px;
+                }
+            }
+        }
+    }
+}

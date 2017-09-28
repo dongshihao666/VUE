@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="font/iconfont.css">
+    <script src="js/fontsize.js"></script>
+</head>
+<body>
+    <header>
+        <img src="img/2.jpg" alt="">
+        <p>消息</p>
+        <a href="#">+</a>
+    </header>
+    <section>
+        <input type="text" value="搜索">
+
+        <div id="app" class="main">
+            <dl v-for="item in json">
+                <dt><img :src=item.img alt=""></dt>
+                <dd>
+                    <h3>{{item.title}}</h3>
+                    <p>{{item.content}}</p>
+                    <span>{{item.span}}</span>
+                </dd>   
+            </dl>
+        </div>
+    </section>
+    <footer>
+        <ul>
+            <li><a href="#">消息 <i class="iconfont icon-shouye"></i></a></li>
+            <li><a href="#">联系人 <i class="iconfont icon-shouye"></i></a></li>
+            <li><a href="#">动态 <i class="iconfont icon-shouye"></i></a></li>
+        </ul>
+    </footer>
+</body>
+<script src="js/jquery-2.1.1.js"></script>
+<script src="js/vue2.js"></script>
+<script>
+
+    var app=new Vue({
+        el:'#app',
+        data:{
+            json:[],
+        },
+        created:function(){
+            $.ajax({
+                url:'http://localhost:9000/goodslist',
+                type:'POST',
+                data:"page=1&name=湘蜀阁"
+            }).then(function(result){
+                console.log(result);
+                console.log(app);
+                app.json=result;
+            },function(error){
+                console.log(error)
+            })
+        }
+    })
+ 
+</script>
+</html>

@@ -1,0 +1,16 @@
+module.exports={
+    data:[
+        {
+            'img':'src/img/header/01.jpg'
+        },
+        {
+            'img':'src/img/header/02.jpg'
+        },
+        {
+            'img':'src/img/header/03.jpg'
+        },
+        {
+            'img':'src/img/header/04.jpg'
+        }
+    ]
+}

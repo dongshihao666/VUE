@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./src/font/iconfont.css">
+    <link rel="stylesheet" href="./src/css/style.css">
+    <script src="./src/js/fontsize.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <router-view></router-view>
+        <div class="footer">
+            <ul>
+                <router-link to="/index" tag="li">
+                    <a href="#">首页  <i class="iconfont icon-shouye"></i> </a>
+                </router-link>
+                <router-link to="/fenlei" tag="li">
+                    <a href="#">分类  <i class="iconfont icon-shouye"></i> </a>
+                </router-link>
+                <router-link to="/faxian" tag="li">
+                    <a href="#">发现  <i class="iconfont icon-shouye"></i> </a>
+                </router-link>
+                <router-link to="/gouwuche" tag="li">
+                    <a href="#">购物车  <i class="iconfont icon-shouye"></i> </a>
+                </router-link>
+                <router-link to="/wode" tag="li">
+                    <a href="#">我的  <i class="iconfont icon-shouye"></i> </a>
+                </router-link>
+            </ul>
+
+        </div>
+
+    </div>
+
+
+</body>
+
+</html>

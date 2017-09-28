@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="font/iconfont.css">
+</head>
+<body>
+    <header>
+        <p>购物车（1010）</p>
+        <a href="#">编辑</a>
+    </header>
+    <section>
+        <div class="mark"></div>
+        <div class="render">
+            <span></span>
+            <dl>
+                <dt><img src="img/1.jpg" alt=""></dt>
+                <dd>
+                    <p>一说智能机器人儿童座椅机器人弯路 早教故事机</p>
+                    <b>￥898</b>
+                </dd>
+            </dl>
+        </div>
+        <div class="mark"></div>
+
+        <div id="app">
+            <div class="wrap"  v-for="items in arr">
+                <span></span>
+                <dl>
+                    <dt><img :src=items.img alt=""></dt>
+                    <dd>
+                        <p>{{items.title}}</p>
+                        <b>{{items.price}}</b>
+                    </dd>
+                </dl>
+            </div>
+        </div>
+
+    </section>
+    <footer>
+        <ul>
+            <li><a href="#">首页 <i class="iconfont icon-shouye"></i></a></li>
+            <li><a href="#">微淘 <i class="iconfont icon-shouye"></i></a></li>
+            <li><a href="#">消息 <i class="iconfont icon-shouye"></i></a></li>
+            <li><a href="#">购物车 <i class="iconfont icon-shouye"></i></a></li>
+            <li><a href="#">我的 <i class="iconfont icon-shouye"></i></a></li>
+        </ul>
+    </footer>
+</body>
+<script src="js/jquery-2.1.1.js"></script>
+<script src="js/vue2.js"></script>
+<script>
+
+
+
+    var app=new Vue({
+        el:'#app',
+        data:{
+            arr:[]
+        },
+        created:function(){
+            $.ajax({
+                url:'http://localhost:9000/goodslist',
+                type:'POST',
+                data:"page=1&name=湘蜀阁"
+            }).then(function(result){
+                console.log(result);
+                console.log(app);
+                app.arr=result;
+            },function(error){
+                console.log(error)
+            })
+        }
+    })
+ 
+</script>
+</html>
